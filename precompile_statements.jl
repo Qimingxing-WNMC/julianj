@@ -22,9 +22,13 @@ SpecialFunctions.trigamma(1.0)
 StatsFuns.xlogy(1, 1)
 
 
-plot(rand(10))
-plot(rand(10), rand(10))
-bar(rand(10))
+p1 = plot(rand(10))
+p2 = plot(rand(10), rand(10))
+p3 = bar(rand(10))
+
+display(p1)
+display(p2)
+display(p3)
 
 nd = Normal()
 rand(nd)
@@ -39,10 +43,13 @@ rand(mn, 10)
 df = DataFrame(a = rand(4), b = [1,1,1,1], y = rand(4), x = randn(4))
 
 ols = lm(@formula(y~x), df)
-show(ols)
+round.(stderror(ols), digits=5)
+round.(predict(ols), digits=5)
+
 
 g = glm(@formula(y~x), df, Normal(), IdentityLink())
-show(g)
+round.(stderror(g), digits=5)
+round.(predict(g), digits=5)
 
 f1 = DataFrame(CSV.File("dummy.csv"))
 f2 = DataFrame(load("dummy.csv"))
