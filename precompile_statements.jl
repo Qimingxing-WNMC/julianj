@@ -22,9 +22,9 @@ SpecialFunctions.trigamma(1.0)
 StatsFuns.xlogy(1, 1)
 
 
-p1 = plot(rand(10))
-p2 = plot(rand(10), rand(10))
-p3 = bar(rand(10))
+p1 = Plots.plot(rand(10))
+p2 = Plots.plot(rand(10), rand(10))
+p3 = Plots.bar(rand(10))
 
 display(p1)
 display(p2)
